@@ -7,6 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./style.css">
+
+    <style>
+
+        .heart{
+            transform: translate(-50%,-50%) scale(0);
+            transition: all 0.1s;
+        }
+
+    </style>
+
+
+
 </head>
 <body class="bg-secondary">
     
@@ -26,7 +38,6 @@
                 <div class="col-1 py-0">
                     <i class="bi bi-wifi text-light mt-1"></i>
                 </div>
-    
                 <div class="col-3 py-0">
                     <p class=" text-light mt-1">10:00</p>
                 </div>
@@ -58,13 +69,6 @@
 
 
 
-        
-
-
-
-
-
-
         <div class="row post m-auto   justify-content-between">
 
 
@@ -88,8 +92,11 @@
 
         <p class="text-start p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. <b>Provident odit animi</b> fugit consequuntur corporis vitae facilis ducimus mollitia magni aliquid. Lorem ipsum dolor sit amet.</p>
 
+        <div class="card  position-relative">
+            <img src="hakla.gif" width="100%" height="350px" class="">
+            <img src="https://media.tenor.com/RYibGej0GvcAAAAj/facebook-emoji.gif" class="position-absolute heart" style="top: 50%;left: 50%;" width="70px">
 
-        <img src="hakla.gif" width="100%" height="350px">
+        </div>
 
         <div class="row mt-3 px-3  ">
 
@@ -104,7 +111,7 @@
             <div class="row d-flex justify-content-around ">
 
                 <div class="col-6">
-                    <button class="btn fs-6 d-flex gap-3  like"><i class="bi bi-hand-thumbs-up fs-4 d-flex justify-content-center"></i> Like</button>
+                    <button class="btn fs-6 d-flex gap-3 my-card like"><i class="bi bi-hand-thumbs-up fs-4 d-flex justify-content-center"></i> Like</button>
                 </div>
 
                 <div class="col-6 ">
@@ -119,6 +126,29 @@
         
 
     </div>
+
+
+    <script>
+
+        let mycard=document.querySelector(`.my-card`)
+        let heart=document.querySelector(`.heart`)
+        
+
+        mycard.addEventListener(`click`,()=>{
+            let like = new Audio ('./like.mp3')
+            like.play()
+            heart.style.transform=`translate(-50%,-50%) scale(1)`
+            setTimeout(()=>{
+            heart.style.transform=`translate(-50%,-50%) scale(0)`
+            },1000)
+        })
+
+
+
+
+
+
+    </script>
         
     
 </body>
